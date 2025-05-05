@@ -1,0 +1,73 @@
+/* Container Styling */
+.saved-searches-container {
+  padding: 50px;
+  background: linear-gradient(160deg, #ff7e5f 0%, #0f1115 60%, #0f1115 100%);;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.page-title {
+  font-size: 32px;
+  margin-top: 7%;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #1e90ff;
+  padding-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Error & Loading */
+.error-text,
+.loading-text,
+.no-results {
+  color: #f87171;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* List */
+.search-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List Item */
+.search-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #13294b;
+  padding: 14px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.search-term {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ef4444;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}

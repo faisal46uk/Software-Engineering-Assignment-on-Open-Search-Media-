@@ -1,0 +1,47 @@
+# version: '3.9'  # You can remove the version if using a newer Docker Compose version
+
+services:
+  # Frontend React App
+  frontend:
+    build:
+      context: ./client # The path to your frontend folder
+    ports:
+      - "3000:80"  # Map port 3000 on the host to port 3000 in the container
+    environment:
+      - REACT_APP_API_URL=http://backend:5000  # API URL pointing to the backend service
+    volumes:
+      - ./client:/app  # Map the frontend directory to the container
+    depends_on:
+      - backend  # Ensures the backend service is started before frontend
+
+  # Backend Node.js App with MySQL
+  backend:
+    build:
+      context: ./backend  # The path to your backend folder
+    ports:
+      - "5000:5000"  # Map port 5000 on the host to port 5000 in the container
+    environment:
+      - DB_HOST=db  # Database service name defined below
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_NAME=mydb
+      - JWT_SECRET=your_jwt_secret  # Secret key for JWT authentication
+    volumes:
+      - ./backend:/app  # Map the backend directory to the container
+    depends_on:
+      - db  # Ensure the DB service is started before the backend
+
+  # MySQL Database
+  db:
+    image: mysql:5.7  # Use the official MySQL image
+    environment:
+      - MYSQL_ROOT_PASSWORD=password  # Root password for MySQL
+      - MYSQL_DATABASE=mydb  # The database that will be created
+    volumes:
+      - db_data:/var/lib/mysql  # Persist database data
+    ports:
+      - "3307:3306"  # Expose MySQL on port 3306
+
+# Volumes for data persistence
+volumes:
+  db_data:

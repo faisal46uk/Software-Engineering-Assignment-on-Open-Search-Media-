@@ -1,0 +1,184 @@
+/* General Layout */
+.login-page-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Left Section */
+.login-left {
+  flex: 1;
+  background: linear-gradient(160deg, #ff7e5f 0%, #0f1115 70%, #0f1115 100%); /* Warm gradient */
+  color: white;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.login-left .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.login-left h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.login-left p {
+  font-size: 1.1rem;
+  max-width: 400px;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Right Section */
+.login-right {
+  flex: 1;
+  background: linear-gradient(to bottom right, #afa2a2, #646464); /* Warm gradient */
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: -6px 0 10px rgba(0, 0, 0, 0.1);
+  /* border-radius: 10px 0 0 10px; */
+}
+
+.login-right h2 {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.auth-subtitle {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: 0.2s ease-in-out;
+}
+
+input:focus {
+  border-color: #feb47b;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(254, 180, 123, 0.3);
+}
+
+.auth-btn {
+  margin-top: 1rem;
+  background-color: #e75d3a;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+  background-color: #f06d4c;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.forgot-link {
+  text-decoration: none;
+  color: #0e1114;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.new-user {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.new-user a {
+  color: #fd5e36;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.new-user a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  margin-top: 1rem;
+  text-align: center;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-page-container {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    flex: unset;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .login-left p {
+    max-width: 100%;
+  }
+
+  .login-right h2 {
+    font-size: 1.5rem;
+  }
+
+  .auth-btn {
+    font-size: 1rem;
+  }
+
+  .remember-forgot {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
